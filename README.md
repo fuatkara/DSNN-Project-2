@@ -42,7 +42,7 @@ Flask Web App: A web application is created, which use the trained model(the pic
 1. Download the files or clone this repository
 git clone https://github.com/fuatkara/DSNN-Project-2
 2. Execute the scripts
-3. 
+
 a. Open a terminal
 
 b. Direct to the project's root directory
