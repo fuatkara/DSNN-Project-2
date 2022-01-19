@@ -15,39 +15,48 @@ Install the packages with
 
 pip install -r requirements.txt
 To create an environment using: conda create --name --file requirements.txt
-3. Project Components
+
+# 3- Project Components
 There are three components for this project:
 
 ETL Pipeline: First I will repair the data with the ETL pipeline that process messages and category data from CSV file and load them into SQLite database. In the Python script, process_data.py, you will find the data cleaning pipeline that:
 
-Loads the messages and categories datasets
-Merges the two datasets
-Cleans the data
-Stores it in a SQLite database
+* Loads the messages and categories datasets
+* Merges the two datasets
+* Cleans the data
+* Stores it in a SQLite database
+
 ML Pipeline: Use the machine learning pipeline to raed data from the SQLite database to create and save a multi-output supervised learning model. In the Python script, train_classifier.py, you will find the machine learning pipeline that:
 
-Loads data from the SQLite database
-Splits the dataset into training and test sets
-Builds a text processing and machine learning pipeline
-Trains and tunes a model using GridSearchCV
-Outputs results on the test set
-Exports the final model as a pickle file
-Flask Web App: I will create a web application, which use the trained model(the pickle file) to classify incoming messages where an emergency worker can input a new message and get classification results in several categories.
+* Loads data from the SQLite database
+* Splits the dataset into training and test sets
+* Builds a text processing and machine learning pipeline
+* Trains and tunes a model using GridSearchCV
+* Outputs results on the test set
+* Exports the final model as a pickle file
+
+Flask Web App: A web application is created, which use the trained model(the pickle file) to classify incoming messages where an emergency worker can input a new message and get classification results in several categories.
 
 
 # Instructions
 1. Download the files or clone this repository
 git clone https://github.com/fuatkara/DSNN-Project-2
 2. Execute the scripts
+3. 
 a. Open a terminal
+
 b. Direct to the project's root directory
+
 c. Run the following commands:
 
 To run ETL pipeline that cleans data and stores in database
+
 python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponseApp.db
 To run ML pipeline that trains classifier and saves
 python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+
 d. Go to the app's directory and run the command
 
 cd app
+
 python run.py
